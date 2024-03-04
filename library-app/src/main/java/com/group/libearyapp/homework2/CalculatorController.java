@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CalculatorController {
-
+// @RequestParam를 지우고 RequstDTO를 받아서 사용하면 좀 더 깔끔한 코드 가능
   @GetMapping("/api/v1/calc")
   public CalcResponse multi(@RequestParam(name = "num1") int num1,
       @RequestParam(name = "num2") int num2) {
