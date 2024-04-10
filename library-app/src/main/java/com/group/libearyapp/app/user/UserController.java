@@ -3,9 +3,8 @@ package com.group.libearyapp.app.user;
 import com.group.libearyapp.app.user.request.UserCreateRequest;
 import com.group.libearyapp.app.user.request.UserUpdateRequest;
 import com.group.libearyapp.app.user.response.UserResponse;
-import com.group.libearyapp.app.user.service.UserService;
+import com.group.libearyapp.app.user.service.UserServiceV2;
 import java.util.List;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
   //  private final List<User> users = new ArrayList<>();
-  private final UserService userService;
+  private final UserServiceV2 userServiceV2;
 
-  public UserController(UserService userService) {
-    this.userService = userService;
+  public UserController(UserServiceV2 userServiceV2) {
+    this.userServiceV2 = userServiceV2;
   }
 
   //  @PostMapping("/user")
@@ -31,7 +30,7 @@ public class UserController {
 //  }
   @PostMapping("/user")
   public void saveUserV2(@RequestBody UserCreateRequest request) {
-    userService.savaeUser(request);
+    userServiceV2.saveUser(request);
   }
 
   //  @GetMapping("/user")
@@ -44,17 +43,17 @@ public class UserController {
 //  }
   @GetMapping("/user")
   public List<UserResponse> getUsersV2() {
-    return userService.getUsers();
+    return userServiceV2.getUsers();
   }
 
   @PutMapping("/user")
   public void updateUser(@RequestBody UserUpdateRequest request) {
-    userService.updateUser(request);
+    userServiceV2.updateUser(request);
   }
 
   @DeleteMapping("/user")
   public void deleteUser(@RequestParam String name) {
-    userService.deleteUser(name);
+    userServiceV2.deleteUser(name);
   }
 
 }
