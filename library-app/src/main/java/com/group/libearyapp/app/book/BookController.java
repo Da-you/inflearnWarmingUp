@@ -18,17 +18,17 @@ public class BookController {
     this.bookService = bookService;
   }
 
-  @PostMapping("/books")
+  @PostMapping("/book")
   public void saveBook(@RequestBody CreateBookRequest request){
     bookService.saveBook(request);
   }
 
-  @PostMapping("/books/loan")
+  @PostMapping("/book/loan")
   public void loanBook(@RequestBody BookLoanRequest request){
     bookService.loanBook(request);
   }
 
-  @PutMapping("/books/return")
+  @PutMapping("/book/return")
   public void returnBook(@RequestBody BookReturnRequest request){
     bookService.returnBook(request);
   }

@@ -1,6 +1,5 @@
 package com.group.libearyapp.app.book.service;
 
-import static com.group.libearyapp.app.user.domain.loanhistory.UserLoanHistory.loan;
 
 import com.group.libearyapp.app.book.domain.Book;
 import com.group.libearyapp.app.book.dto.request.BookLoanRequest;
@@ -8,7 +7,6 @@ import com.group.libearyapp.app.book.dto.request.BookReturnRequest;
 import com.group.libearyapp.app.book.dto.request.CreateBookRequest;
 import com.group.libearyapp.app.book.repository.BookRepository;
 import com.group.libearyapp.app.user.domain.User;
-import com.group.libearyapp.app.user.domain.loanhistory.UserLoanHistory;
 import com.group.libearyapp.app.user.repository.UserLoanHistoryRepository;
 import com.group.libearyapp.app.user.repository.UserRepository;
 import org.springframework.stereotype.Service;

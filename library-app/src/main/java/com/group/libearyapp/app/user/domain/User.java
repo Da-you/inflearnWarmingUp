@@ -1,7 +1,6 @@
 package com.group.libearyapp.app.user.domain;
 
 import com.group.libearyapp.app.user.domain.loanhistory.UserLoanHistory;
-import com.group.libearyapp.app.user.response.UserResponse;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
